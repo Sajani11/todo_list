@@ -22,7 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todos', 
+    # 'todos.apps.TodosConfig', 
+    "todos"
 ]
 
 MIDDLEWARE = [
@@ -42,10 +43,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates', 
-        ],
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],  # This allows global template access
+        'APP_DIRS': True,  # This must be True
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -56,7 +55,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 
 WSGI_APPLICATION = 'mysite.wsgi.application'

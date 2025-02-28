@@ -2,9 +2,8 @@
 
 # todos/forms.py
 from django import forms
-from .models import todo
-
+from .models import Todo
 class TodoForm(forms.ModelForm):
     class Meta:
-        model = todo
+        model = Todo
         fields = ['title', 'description', 'completed']

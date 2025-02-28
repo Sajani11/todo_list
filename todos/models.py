@@ -8,5 +8,7 @@ class Todo(models.Model):
     description = models.TextField()
     completed = models.BooleanField(default=False)
 
+    class Meta:
+        app_label = 'todos'
     def __str__(self):
         return self.title

@@ -1,16 +1,15 @@
 <!-- todos/templates/todos/update_todo.html -->
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Update Todo</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Update Todo: {{ todo.title }}</h1>
     <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Update Todo</button>
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Update Todo</button>
     </form>
     <a href="{% url 'todo_list' %}">Back to Todo List</a>
-</body>
+  </body>
 </html>

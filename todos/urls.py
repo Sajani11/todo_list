@@ -1,10 +1,9 @@
-# todos/urls.py
 from django.urls import path
-from . import views
+from .views import todo_list, add_todo, update_todo, delete_todo
 
 urlpatterns = [
-    path('', views.todo_list, name='todo_list'),  
-    path('add/', views.add_todo, name='add_todo'),  
-    path('update/<int:pk>/', views.update_todo, name='update_todo'), 
-    path('delete/<int:pk>/', views.delete_todo, name='delete_todo'),  
+    path('', todo_list, name='todo_list'),
+    path('add/', add_todo, name='add_todo'),
+    path('update/<int:pk>/', update_todo, name='update_todo'),
+    path('delete/<int:pk>/', delete_todo, name='delete_todo'),
 ]

@@ -1,8 +1,8 @@
-from django.contrib import admin
+
 
 
 # todos/admin.py
 from django.contrib import admin
-from .models import todo
+from .models import Todo
 
-admin.site.register(todo)
+admin.site.register(Todo)
