@@ -1,8 +1,12 @@
 <!-- todos/templates/todos/update_todo.html -->
 <!DOCTYPE html>
 <html>
+  
   <head>
     <title>Update Todo</title>
+    {% load static %} 
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
   </head>
   <body>
     <h1>Update Todo: {{ todo.title }}</h1>

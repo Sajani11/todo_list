@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,8 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'todos.apps.TodosConfig', 
-    "todos"
+    'todos',  # Your custom app
 ]
 
 MIDDLEWARE = [
@@ -38,8 +38,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
-# settings.py
-
+# TEMPLATES configuration
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -56,10 +55,9 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-# Database
+# Database configuration (SQLite in development)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -89,8 +87,17 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
+
+
+STATIC_URL = '/static/'  # The URL for accessing static files
+
+# Path where static files should be collected
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where `collectstatic` will gather all static files
+
+# Additional static directories (if needed)
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  
+]
 
 # Media files (uploads)
 MEDIA_URL = '/media/'

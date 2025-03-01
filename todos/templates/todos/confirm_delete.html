@@ -1,8 +1,12 @@
 <!-- todos/templates/todos/confirm_delete.html -->
 <!DOCTYPE html>
 <html>
+    
 <head>
     <title>Delete Todo</title>
+    {% load static %} 
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
 </head>
 <body>
     <h1>Are you sure you want to delete this Todo: {{ todo.title }}?</h1>
