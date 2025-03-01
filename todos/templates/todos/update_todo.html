@@ -1,19 +1,21 @@
-<!-- todos/templates/todos/update_todo.html -->
-<!DOCTYPE html>
-<html>
-  
-  <head>
-    <title>Update Todo</title>
-    {% load static %} 
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+{% load static %}
 
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+
+<head>
+    <title>Update Todo</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
     <h1>Update Todo: {{ todo.title }}</h1>
-    <form method="POST">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Update Todo</button>
+    <form class="update-form" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Todo</button>
     </form>
-    <a href="{% url 'todo_list' %}">Back to Todo List</a>
-  </body>
+    <a href="{% url 'todo_list' %}" class="back-button">Back to Todo List</a>
+</body>
 </html>

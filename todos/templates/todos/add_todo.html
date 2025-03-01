@@ -1,19 +1,29 @@
 <!-- todos/templates/todos/add_todo.html -->
 <!DOCTYPE html>
-<html>
-  
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+
   <head>
     <title>Add Todo</title>
-    {% load static %} 
-     <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
+    {% load static %}
+    <!-- Link to the CSS for styling -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
   </head>
   <body>
-    <h1>Add Todo</h1>
-    <form method="POST">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Add Todo</button>
-    </form>
-    <a href="{% url 'todo_list' %}">Back to Todo List</a>
+    <div class="container">
+      <h1>Add Todo</h1>
+      <!-- Form for adding new Todo -->
+      <form method="POST">
+        {% csrf_token %}
+        <!-- Render the form fields (using form.as_p for default paragraph rendering) -->
+        {{ form.as_p }}
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Add Todo</button>
+      </form>
+      
+      <!-- Link to go back to Todo List -->
+      <a href="{% url 'todo_list' %}" class="back-link">Back to Todo List</a>
+    </div>
   </body>
 </html>
